@@ -1,32 +1,158 @@
+<!-- I chose to do a study website where users can pick a background and sound to play while the study. They can fullscreen the video as the sound is playing in the background to prevent them distarctions on their laptop. -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diem Mi</title>
-</head>
-<body> 
-    <h1>Interactive Media</h1>
-    <a href="week2/index.html">Go to Week 2</a>
-    <h2>Instructor: Dr. Rohit Ashok Khot
-        <table>
-            <t>Group 1</t>
-            
-        </table>
-    <img src="Dog_Breeds.jpeg" alt="a Dog_Breeds">
-    Email: rohitashok.khot@rmit.edu.au (Weekdays 9am-5pm)</h2>
-    <ul>
-        <li>Group 1: Every Tuesday (09:30 am - 12:30 pm) </li>
-        <li>Group 2: Every Tuesday (01:30 pm - 04:30 pm)</li>
-        <li>Group 3: Every Thursday (09:30 am - 12:30 pm)</li>
-        <li>Group 4: Every Thursday (01:30 pm - 04:30 pm)</li>
-    </ul>
-    <h3>Venue: 09.02.20 (Tuesday) & 09.02.19 (Thursday)</h3>
-    <p>Welcome to Interactive Media 1! 
-        Interactive Media 1 is about enabling you to engage with the fundamentals of interaction design through the use of web programming. 
-        Our focus will be on building up from the basic principles of programming, covering the standard web languages - HTML, CSS and JavaScript, in order to be able to select and use appropriate programming languages, together with core concepts of interaction design, in service of your broader digital design goals.Course-Specific Learning Outcomes: 
-        Upon completion of this course, you will have a comprehensive understanding of the key concepts of interactivity, user experience design, and information architecture in web-based environments. You will also be able to identify and utilize the appropriate technologies to address interactive design challenges. Furthermore, you will have the skills to analyze user needs, organize information, and create effective navigation strategies. Additionally, you will be proficient in controlling the visual aspects of typography, color, and layouts through scripting languages and coding, ensuring compatibility across multiple platforms. Lastly, you will be able to critically evaluate web projects based on user-centered design principles.  </p> 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 2</title>
+    <!-- add the font family of your choice -->
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <!-- I chose this font becuase it felt old school and thought it suited the website which iss related to studying -->
+      <h1>study relaxation</h1>
+    </header>
+    <!-- I wanted to include steps so users knows how to navigate the website and what it is. -->
+    <h2>1. Pick your background.</h2>
+    <div class="outer">
+      <section class="video-container">
+        <video id="my-video" controls>
+          <source src="https://videos.pexels.com/video-files/5447344/5447344-hd_2048_1080_24fps.mp4" type="video/mp4" />
+        </video>
 
-</body>
+        <section class="video-list">
+          <!-- I wanted users to see what videos they could chose from therefore I used images of the videos to showcase that -->
+          <button id="first-video-btn">
+            <img id="first-video-img" src="rain.jpg" alt="rain" />
+          </button>
+          <button id="second-video-btn">
+            <img id="second-video-img" src="waves.jpg" alt="waves" />
+          </button>
+          <button id="third-video-btn">
+            <img id="third-video-img" src="fire.jpg" alt="fire" />
+          </button>
+        </section>
+      </section></div>
+
+   <h3>2. Now pick your sound.</h3>
+      <div class="outer">
+     <!-- I wanted sounds that correlated with the videos however, users are able to mix videos and the audios if they prefer. -->
+        <section class="sound-container">
+          <audio controls src="rain.mp3" id="my-sound"></audio>
+          
+           <section class="sound-list">
+            <!-- I thought it made more sense to have buttons of the sounds with the sounds names rather than images of the sounds as it's more suited for the videos since it's visual -->
+          <button id="first-sound-btn">
+            <img id="first-sound-img" src="rain2.png" alt="rain" />
+          </button>
+          <button id="second-sound-btn">
+            <img id="second-sound-img" src="waves1.png" alt="rain" />
+          </button>
+          <button id="third-sound-btn">
+            <img id="third-sound-img" src="Fire.png" alt="fire" />
+          </button>
+        </section>
+
+        <section class="sound-title">
+          <!-- I decided to add controls and the progress bar to the sounds rather than the videos becuase the videos are not very significant as its just for background visuals when users are studying. I thought it would be more helpful if there were controls on the sounds. -->
+          <h4>Now Playing: <span id="sound-name"></span></h4>
+          <h4>Current playtime: <span id="sound-time"></span></h4>
+        </section>
+        </section> 
+
+        <section class="sound-controls">
+          <button id="play-pause-btn">
+            <img
+              id="play-pause-img"
+              src="https://img.icons8.com/ios-glyphs/30/play--v1.png"
+              alt="Play Button"
+              width="24"
+              height="24"
+            />
+          </button>
+          <button id="mute-unmute-btn">
+            <img
+              id="mute-unmute-img"
+              src="https://img.icons8.com/ios-glyphs/30/no-audio--v1.png"
+              alt="Mute Button"
+              width="24"
+              height="24"
+            />
+          </button>
+          <button id="previous-btn">
+            <img
+              id="previous-img"
+              src="https://img.icons8.com/ios-glyphs/30/skip-to-start--v2.png"
+              alt="Previous Button"
+              width="24"
+              height="24"
+            />
+          </button>
+          <button id="next-btn">
+            <img
+              id="next-img"
+              src="https://img.icons8.com/ios-glyphs/30/end--v2.png"
+              alt="Next Button"
+              width="24"
+              height="24"
+            />
+          </button>
+          <div class="progress-bar">
+            <span id="progress-bar-fill"></span>
+          </div>
+          <button id="loop-btn">
+            <img
+              id="loop-img"
+              src="https://img.icons8.com/ios-glyphs/30/repeat.png"
+              alt="Loop Button"
+              width="24"
+              height="24"
+            />
+          </button>
+          <button id="decrease-volume-btn">
+            <img
+              id="decrease-volume-img"
+              src="https://img.icons8.com/ios-glyphs/30/low-volume.png"
+              alt="Decrease volume Button"
+              width="24"
+              height="24"
+            />
+          </button>
+          <button id="increase-volume-btn">
+            <img
+              id="increase-volume-img"
+              src="https://img.icons8.com/ios-glyphs/30/high-volume--v1.png"
+              alt="Increase volume Button"
+              width="24"
+              height="24"
+            />
+          </button>
+        </section></div>
+  
+
+      <section>
+        <h5>3. Now fullscreen your background and enjoy studying with relaxing ambience.</h5>
+        <!-- I thought the h5 by itself was quite plain and boring so I decided to add a bunny gif which I thought fit in well with the overall aesthetics of the site. -->
+        <div class="inner"><img src="giphy.gif" alt="" id="bunny"></div>
+      </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+      <p>&copy; 2024 Media Player Website. All rights reserved.</p>
+      Icons by <a href="https://icons8.com">Icons8</a>
+      Videos & Sounds by
+      <a href="https://www.pexels.com/">Pexels</a>
+      Gif by
+      <a href="https://giphy.com/">Giphy</a>
+      <p>Diem Mi s3997291</p>
+    </footer>
+  </body>
 </html>

@@ -1,0 +1,174 @@
+:root {
+    --primary-bg-color: #f4f4f4;
+    --text-color: #333;
+    --main-bg-color: #333;
+    --main-text-color: #fff;
+    --main-btn-bg-color: #938989;
+  }
+  
+  body,
+  h1,
+  p,
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    /* I wanted the background to be relaxing and not too busy. I orignally wanted to go with a more darker hues of blues, purples and greens to reflect night time as I though that would be the most relaxing, however I found that the dark colours clashed with the videos and made it look too busy. In the end, I found that lighter background complimented the videos well.*/
+    background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+  }
+
+  h1 {
+    font-size: 3rem;
+    color: #367C95;
+    /* I chose this colour becuase I thought it goes well with the background as well as the natural and earthy vibes of the videos. */
+    font-family: "Silkscreen", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    margin-top: 2rem;
+  }
+
+  h2, 
+  h3,
+  h5 {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    font-family: "DM Mono", monospace;
+    /* I chose this font becuase again, it looked old school and suited well with the theme of the site. */
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1rem;
+  }
+
+  h5 {
+    margin-bottom: 1rem;
+  }
+
+  h4 {
+    font-family: "DM Mono", monospace;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 0.8rem;
+  }
+
+  body {
+    font-family: "Arial", sans-serif;
+    background-color: var(--primary-bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .container {
+    max-width: 1000px;
+    width: 100%;
+    padding: 10px;
+  }
+  
+  /* Media player styling */
+  .media-player {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .media-player video {
+    max-width: 100%;
+  }
+
+  .outer {
+    border: 2px solid #ABDCED;
+    background-color: white;
+    /* I chose a white backgorund for the boxes as a wanted them to stand out amongst the background and I reinforced that by adding a light blue border to help it stand out more. */
+    border-radius: 20px;
+    /* I like the look of round edges becuase I find that it's less harsh. */
+    width: 900px;
+    min-height: 200px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* flex-wrap: wrap; */
+  }
+
+  img {
+    cursor: pointer;
+  }
+
+  .inner {
+    /* I wanted the gif to be in the center */
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4rem;
+  }
+
+  .video-container {
+    display: flex;
+    gap: 1rem;
+    /* flex-wrap: wrap; */
+  }
+  
+  .video-container > video {
+    /* flex: 1; */
+    width: 75%;
+  }
+  
+  .video-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* width: 200px; */
+    flex: 1;
+  }
+  
+  .sound-list {
+    display: flex;
+    flex-direction: row;
+    /* I had the sound list in a coloumn before however, I found it looked better as a row */
+    gap: 1rem;
+    width: 400px;
+  }
+  
+  .sound-controls,
+  .timeline {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: nowrap;
+  }
+
+  .sound-controls button {
+    width: 46px;
+    height: 36px;
+    background-color: #EBDBE4;
+    /* The pink buttons complimented the overall theme well */
+    border: none;
+  }
+
+  .sound-controls button img {
+    /* padding: 2px; */
+  }
+
+  .progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #EBDBE4;
+    margin-top: 10px;
+    overflow: hidden;
+  }
+  
+  .progress-bar span {
+    display: block;
+    height: 100%;
+    background-color: #F7B2D9;
+    /* I played around with the colour a lot because I found that the colour had to be a lot dark than the bar as my previous attempts, the pink was still too light so you couldn't see the progress that well. */
+    width: 0;
+    transition: width 0.3s ease;
+  }
+
+  footer {
+    text-align: center;
+  }
