@@ -1,0 +1,55 @@
+<!-- I decided to do my assignment around the context of a beauty e-commerce website. My chosen action was a hover effect where users can hover over a product and information such as the product name, reviews, favourite button and "Add to cart" button will slide in. I chose this concept because when applied to the whole webiste page, the layout will appear more minimalistic and clean which gives off a more modern and trustworthy design and website. -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 3</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+<!-- I chose this sans serif font because it's modern and fits in well with the e-commerce website.  -->
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <!-- I chose this product image because it's clean and simple and there's a lot of white space for me to add all my texts and buttons without it being too overwhelming.  -->
+    <div class="outer">
+      <button id="hover-button">
+        <img
+          src="cream.jpg"
+          alt="cream"
+          id="myImage"
+          data-catname="cream"
+        />
+      </button>
+      <div class="inner slide-in" id="name">
+        <p>Overnight cream & mask</p> 
+      </div>
+      <div class="inner" id="star">
+        <img src="star.png" alt="star" id="star-img"   
+        width="80"
+        height="80" class="slide-in">
+        <p id="review-text" class="slide-in">(158 reviews)</p>
+      </div>
+      <div class="inner slide-in" id="more-info">
+        <p>Add to cart</p>
+      </div>
+      <button class="inner" id="heart">
+      <img src="love.png" alt="heart" id="heart-img"   
+      width="35"
+      height="35" class="slide-in inactive heart">
+      <!-- I palyed around with the dimesions of the icon until it was about the some height as the "Add to cart" button. Any smaller or larger would look uncohesive and unbalanced. -->
+      </button>
+    </div>
+    <footer>
+        <p>&copy; 2024 E-Commerce Website. All rights reserved.</p>
+        <p>Icons by <a href="https://www.flaticon.com/">Flaticon</a> Photo by
+            <a href="https://www.freepik.com/">Freepik</a></p>
+        <p>Diem Mi s3997291</p>
+      </footer>
+  </body>
+</html>
+
+<!-- Had I had more time, it would've been ideal to have this replicate an actual beauty website to get the full experience however, I think this project shows the most important functionalities of the hover action. -->

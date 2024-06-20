@@ -1,0 +1,155 @@
+/* https://colorhunt.co/palette/1a120b3c2a21d5cea3e5e5cb */
+
+body {
+    /* I wanted the background colour to be neutral and suit the product image to give of a more clean and natural aesthetic. */
+    background-color: whitesmoke; 
+    display: flex;
+    text-align: center;
+    margin: auto;
+    max-width: 1000px;
+    justify-content: center;
+    align-items: center;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-style: normal;
+  }
+
+  .outer {
+    width: 400px;
+    min-height: 200px;
+    padding: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+  }
+
+  footer {
+    position: absolute; 
+    bottom: 0; 
+    text-align: center;
+    color: black;
+    font-size: 15px;
+  }
+
+  button {
+    /* padding: 10px; */
+    cursor: pointer;
+    border: none;
+    margin-left: -20px;
+  }
+  
+  button:hover {
+    background-color: cornsilk;
+    /* scale: 0.95; */
+  }
+
+  
+  #more-info {
+    /* I chose a bold red for the "Add to cart" button as that is the main action that a website aims to achieve for its user experience. It's noticeable enough where users can add the item to their cart efficiently which is the main purpose of this hover effect in this context. */
+    background-color: hsla(0, 83%, 30%, 1);;
+    padding: 10px;
+    position: absolute;
+    bottom: 20px;
+    width: 40%;
+    display: none;
+    border-radius: 20px;
+    /* I also round the edges of the button to give it a softer look as a personally don't like the look of sharp edges on buttons */
+  }
+
+  .inner p {
+    /* White was the most reasonable colour for the font as it contrasted well with the red */
+    color: white;
+    font-weight: 600;
+    /* I wanted the font to be in bold because it's the most important element of this feature, hence it must be eyecatching for users in case it is the action they were looking for when hovering over the products. */
+    font-size: 17px;
+  }
+  
+  #more-info.show {
+    display: block;
+  }
+
+  #heart-img {
+    /* I added a favourites buttons so users can add products to the "favourites list" quickly*/
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    display: none;
+  }
+  
+  #heart-img.showHeart {
+    display: block;
+    /* opacity: 1; Make the icon visible on hover */
+  }
+
+#name {
+    /* The name of the product is also one of the most important elements hence why it is the at the top and also in large and bold font as per a visual hierarchy. */
+    position: absolute;
+    top: 25px;
+    display: none;
+}
+
+#name p {
+    /* Adding onto the visual hierarchy, I decided on this brown colour to differentiate the title to the rest of the elements. It was also more visually pleasing to choose a colour that suited the overal neutral tone of the website because had it been just black, it would have been too simple.  */
+    color: #6F6459;
+    font-weight: 800;
+    font-size: 27px;
+}
+
+#name.showName {
+    display: block;
+}
+
+#star-img {
+    /* Adding stars and reviews is also another important element of the online shopping experience. Having an indication of the whether a product is decent enough is a major factor in getting customers to click on the "Add to cart" button. I decided to keep the star black because I didn't want it to be read like the button or brown like the product name. I wanted each element to be distinct and recognisable.*/
+    position: absolute;
+    top: 40px;
+    display: none;
+  }
+  
+  #star-img.showStar {
+    display: block;
+  }
+
+  #star p {
+    /* Since the stars were black, I thought the text should be too. */
+    color: black;
+    font-size: 15px;
+    font-weight: 400;
+    /* I chose the regular font weight as I thought the information isn't as important as the other elements hence, bold fonts should only be reserved for titles and actions */
+    position: absolute;
+    top: 70px;
+    /* I had to add the left here so that the text will appear next to the stars. */
+    left: 95px;
+    display: none;
+  }
+
+  #review-text.showReview {
+    display: block;
+}
+
+/* This is where I used Gemini to assist me in adding in the slide effect on hover. I thought this method made more sense than the attempt I made with the javascript as it looked familiar to the css animations example we did in class for week 10. Gemini was helpful in that it explained every code and what it means and does. Even though Gemini was able to help for a lot of this part, I still couldn't get it to work at the start but then I realised I needed to add the class: slide in to each element in html for it to work. */
+@keyframes slideIn {
+    from { transform: translateX(100px); opacity: 0; } /* Start hidden & off-screen right */
+    to { transform: translateX(0); opacity: 1; } /* Slide in from left and become visible */
+  }
+  
+  .slide-in {
+    /* I origianlly had the slide in for 0.3s but found it to rushed so I changed it to 0.5s which was much better as I thought it was more subtle and elegant. */
+    animation: slideIn 0.5s ease-in-out forwards; /* Use the animation on hover */
+    opacity: 0; /* Initially hidden */
+  }
+  
+  #hover-button:hover .slide-in {
+    animation-play-state: running; /* Start the animation on hover */
+  }
+
+/* I thought the slide in felt incomplete with some movement from the product image itself so I dedcided to add a zoom in effect on hover to add to the interactivity. It also provided differentiation from other products when customers hover over it. With the slide in code from above, I was able to figure out how to do the zoom in effect. */
+  #myImage {
+    overflow: hidden;
+    transition: transform 0.5s ease-in-out; /* To match the ease in out with the other elements, I also made the zoom the same speed which looked more cohesive. */
+  }
+  
+  #hover-button:hover #myImage {
+    transform: scale(1.1); 
+  }
+  
